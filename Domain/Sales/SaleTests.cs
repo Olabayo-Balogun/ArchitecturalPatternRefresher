@@ -8,19 +8,23 @@ using NUnit.Framework;
 
 namespace CleanArchitecture.Domain.Sales
 {
+    //The attribute below communicates with NUnit that this is a test that should be run
     [TestFixture]
     public class SaleTests
     {
+        //These private fields are entities to be used in the test
         private Sale _sale;
         private Customer _customer;
         private Employee _employee;
         private Product _product;
 
+        //These are setup and verification values that will also be used during the test
         private const int Id = 1;
         private static readonly DateTime Date = new DateTime(2001, 2, 3);
         private const decimal UnitPrice = 1.00m;
         private const int Quantity = 1;
 
+        //The setup attribute tells NUnit to run this block of code first everytime the test is run
         [SetUp]
         public void SetUp()
         {
@@ -33,6 +37,7 @@ namespace CleanArchitecture.Domain.Sales
             _sale = new Sale();
         }
 
+        //The test attribute is what is used to tell NUnit that this is a unit test.
         [Test]
         public void TestSetAndGetId()
         {
